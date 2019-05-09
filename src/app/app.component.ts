@@ -11,10 +11,6 @@ export class AppComponent implements OnInit {
   constructor(private gitSearchService: GitSearchService) {}
   title = 'Angular';
   ngOnInit() {
-    this.gitSearchService.gitSearch('Angular').then((response: GitSearch) => {
-      alert('Total Libraries Found' + response.total_count);
-    }, (error) => {
-      alert('Error Occured: ' + error.statusText);
-    });
+
   }
 }
