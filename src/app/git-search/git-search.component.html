@@ -1,6 +1,11 @@
 <h2>{{heading}} - {{displayQuery}} </h2>
-<input name="query" placeholder="Enter Search Here" [(ngModel)] = 'searchQuery'>
-<button (click)='sendquery()'>Submit</button>
+<form (ngSubmit)="sendquery()" [formGroup]="form">
+  <div *ngFor = 'let key of modelkeys'>
+    {{key}} <input name="{{key}}" placeholder="Enter {{key}} here" formControlName="{{key}}">
+  </div>
+  <button type="submit" [disabled]="!form.valid">Submit</button>
+</form>
+
 <div *ngIf="searchResults; else elseBlock">
   <h3 class="total">Total Results: {{searchResults.total_count}}</h3>
   <ul class="list">
