@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="img-container">
+        <img src="{{ quiz.imgUrl }}" alt="{{ quiz.title }}">
+    </div>
+    <div class="info-container">
+        <h1><b>{{ quiz.title }}</b></h1>
+        <h2>by <i>{{ quiz.author }}</i></h2>
+        <p>{{ quiz.description }}</p>
+        <div class="quiz-info">
+            <p><i>{{ quiz.quantity }} {{ quiz.quantity > 0 ? 'items' : 'item' }} available</i></p>
+            <h2>$ {{ quiz.price }}</h2>
+        </div>
+        <button mat-flat-button color="primary" class="add-to-cart-btn">Add to Cart</button>
+    </div>
+</div>
